@@ -108,9 +108,24 @@ Our evaluation approach goes beyond traditional metrics and focuses on metrics t
 
 ## Model Evaluation
 - In evaluating our models, we considered several metrics along with their 95% confidence intervals: AUC, F1 score, recall, and lifetime value.
-<img width="647" alt="compare_metrics" src="https://github.com/isabhinav/BankChurn/assets/130937665/18218015-2a4f-440e-bde3-cc171017a418">
+<img width="664" alt="compare_metrics" src="https://github.com/isabhinav/BankChurn/assets/130937665/ddd618de-c26e-4528-8f6e-7494c901b986">
 
 
 - Although there may be some overlap in the confidence intervals, the consistent trends observed across the evaluation metrics suggest that the XGBoost model generally outperforms the stepwise logistic and random forest models in terms of recall, F1 score, AUC, and profit per send.
 
 - While the confidence intervals provide a measure of uncertainty, the overall pattern of superior performance in the XGBoost model still indicates its strengths in churn classification.
+
+- The Expected Value for each model was calculated as discussed below.
+- Lifetime Value of Churners: 
+   - Avg annual transaction amount for churners is $3,095
+   - Avg lifetime period for churners is 3 years (35.8 months)    
+   - Margin per transaction is 3% (assumption)
+   - LTV (lifetime value of a customer) = total annual transaction amount * margin per transaction * retention time period 
+   - Therefore, the average LTV for a churner is 3095 * 0.03 * 3 = $278.5
+
+- Expected Value of Model: 
+   - Marketing cost is $100 (assumption)
+   - when a customer accurately predicted to churn responds to the intervention (TP), the profit is the difference between the customer's Lifetime Value ($278.5) and the marketing cost ($100).
+   - if the model incorrectly predicts that a customer will churn (FP), the only loss is the cost of the promotion ($100). 
+   - if a customer who is about to churn is inaccurately predicted not to churn (FN), the potential Lifetime Value (278.5) is lost.
+   - Expected Value of Model = (278.5 - 100) * tp - 100 * fp - 278.5 * fn 
