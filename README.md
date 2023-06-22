@@ -134,5 +134,5 @@ Our evaluation approach goes beyond traditional metrics and focuses on metrics t
    - if a customer who is about to churn is inaccurately predicted not to churn (FN), the potential Lifetime Value (278.5) is lost.
    - Expected Value of Model = (278.5 - 100) * tp - 100 * fp - 278.5 * fn
 
-- In summary, we can conclude that the XGBoost model is the most promising and impactful for our churn classification problem.
+- In summary, we can conclude that out of the models we evaluated, the XGBoost model is the most promising and impactful for our churn classification problem.
   
