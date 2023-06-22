@@ -107,7 +107,7 @@ We also explore additional metrics to gain a comprehensive understanding of the 
 Our evaluation approach goes beyond traditional metrics and focuses on metrics that align with the specific objectives of the business. By assessing recall and lifetime value as primary metrics, along with exploring other relevant metrics such as the F1 score and ROC curve, we ensure a comprehensive understanding of the model's performance and the associated trade-offs.
 
 ## Model Evaluation
-- In evaluating our models, we considered several metrics along with their 95% confidence intervals: AUC, F1 score, recall, and lifetime value.
+- In evaluating our models, we considered several metrics along with their 95% confidence intervals: AUC, F1 score, recall, and lifetime value. The results are shown below
 <img width="664" alt="compare_metrics" src="https://github.com/isabhinav/BankChurn/assets/130937665/ddd618de-c26e-4528-8f6e-7494c901b986">
 
 
@@ -115,17 +115,24 @@ Our evaluation approach goes beyond traditional metrics and focuses on metrics t
 
 - While the confidence intervals provide a measure of uncertainty, the overall pattern of superior performance in the XGBoost model still indicates its strengths in churn classification.
 
-- The Expected Value for each model was calculated as discussed below.
+##### _Lifetime and Expected Value_
+
+<img width="355" alt="ltv_churners" src="https://github.com/isabhinav/BankChurn/assets/130937665/146f67c3-ab63-48c3-b7ec-690569fca459">
+ 
 - Lifetime Value of Churners: 
    - Avg annual transaction amount for churners is $3,095
    - Avg lifetime period for churners is 3 years (35.8 months)    
    - Margin per transaction is 3% (assumption)
    - LTV (lifetime value of a customer) = total annual transaction amount * margin per transaction * retention time period 
    - Therefore, the average LTV for a churner is 3095 * 0.03 * 3 = $278.5
+     
 
 - Expected Value of Model: 
    - Marketing cost is $100 (assumption)
    - when a customer accurately predicted to churn responds to the intervention (TP), the profit is the difference between the customer's Lifetime Value ($278.5) and the marketing cost ($100).
    - if the model incorrectly predicts that a customer will churn (FP), the only loss is the cost of the promotion ($100). 
    - if a customer who is about to churn is inaccurately predicted not to churn (FN), the potential Lifetime Value (278.5) is lost.
-   - Expected Value of Model = (278.5 - 100) * tp - 100 * fp - 278.5 * fn 
+   - Expected Value of Model = (278.5 - 100) * tp - 100 * fp - 278.5 * fn
+
+- In summary, we can conclude that the XGBoost model is the most promising and impactful for our churn classification problem.
+  
