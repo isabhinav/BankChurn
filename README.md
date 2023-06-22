@@ -107,3 +107,10 @@ We also explore additional metrics to gain a comprehensive understanding of the 
 Our evaluation approach goes beyond traditional metrics and focuses on metrics that align with the specific objectives of the business. By assessing recall and profit per send as primary metrics, along with exploring other relevant metrics such as the F1 score and ROC curve, we ensure a comprehensive understanding of the model's performance and the associated trade-offs.
 
 ## Model Evaluation
+- In evaluating our models, we considered several metrics along with their 95% confidence intervals: AUC, F1 score, recall, and profit per send.
+<img width="647" alt="compare_metrics" src="https://github.com/isabhinav/BankChurn/assets/130937665/18218015-2a4f-440e-bde3-cc171017a418">
+
+
+- Although there may be some overlap in the confidence intervals, the consistent trends observed across the evaluation metrics suggest that the XGBoost model generally outperforms the stepwise logistic and random forest models in terms of recall, F1 score, AUC, and profit per send.
+
+- While the confidence intervals provide a measure of uncertainty, the overall pattern of superior performance in the XGBoost model still indicates its strengths in churn classification.
