@@ -19,7 +19,7 @@ The selection of appropriate evaluation metrics hinges upon a comprehensive unde
 
 For example, If the manager emphasizes capturing as many potential churners as possible, the model should prioritize maximizing recall. This means the model aims to identify a high proportion of customers who are likely to churn, even if it results in some false positives. On the other hand, if the bank manager has limited resources and wants to focus on targeting only the most likely churners, the model should prioritize precision. This means the model aims to minimize false positives and identify the customers most likely to churn, even if the model may miss some potential churners. 
 
-Moreover, for churn problems, It is essential to consider the impact on lifetime value when assessing the effectiveness of the models. However, calculating lifetime value involves making numerous assumptions about the business such as the method of outreach (direct mail or email), gross margin, cost of outreach, nature of incentive (offer or call to action), cost of the offer, open rate of direct mail or email, and response rate to these marketing interventions. Given the complexity of these assumptions, we need a less comprehensive metric, which still helps assess our models' financial impact.
+Moreover, for churn problems, it is essential to consider the impact on lifetime value when assessing the effectiveness of the models. However, calculating lifetime value involves making numerous assumptions about the business such as the method of outreach (direct mail or email), gross margin, cost of outreach, nature of incentive (offer or call to action), cost of the offer, open rate of direct mail or email, and response rate to these marketing interventions. Given the complexity of these assumptions, we need a less comprehensive metric, which still helps assess our models' financial impact.
 
 By carefully considering these elements, we can tailor our approach and metrics to effectively address the churn prediction problem and align with the specific needs and goals of the bank.
 
@@ -97,23 +97,27 @@ Our evaluation strategy focuses on metrics that directly quantify the consequenc
 ##### _Recall_
 Recall, also known as sensitivity or true positive rate, measures the ability of a model to correctly identify the positive class (churners) out of all the actual positive instances. In our context, recall is a crucial metric because we assume that the bank wants to capture as many potential churners as possible, even if it means intervening with some customers who may not churn. 
 
-##### _Lifetime Value_
-Suppose we know the costs and benefits of each type of classification (true positives, true negatives, false positives, false negatives). Incorporating these costs into the evaluation of classification models makes it possible to estimate the financial impact of each model. Although our lifetime value calculation is not comprehensive, it still sheds light on the business impact of various models and the costs associated with misclassification. 
+##### _Expected Value_
+Suppose we know the costs and benefits of each type of classification (true positives, true negatives, false positives, false negatives). Incorporating these costs into the evaluation of classification models makes it possible to estimate the financial impact of each model. Although our expected value calculation is not comprehensive, it still sheds light on the business impact of various models and the costs associated with misclassification. 
 
 ##### _Additional Metrics_
 We also explore additional metrics to gain a comprehensive understanding of the trade-offs between different models. By considering these additional metrics, we can gain deeper insights into the performance of our models and make informed decisions about the optimal model selection based on the specific priorities and requirements of the business. For instance, we can examine the F1 score, which balances both precision and recall, providing insight into the overall effectiveness of the model in capturing churners while minimizing false positives. Additionally, we can plot the ROC curve to visualize the discrimination ability of our models and analyze the trade-off between the true positive rate and the false positive rate.
 
 ##### _Summary_
-Our evaluation approach goes beyond traditional metrics and focuses on metrics that align with the specific objectives of the business. By assessing recall and lifetime value as primary metrics, along with exploring other relevant metrics such as the F1 score and ROC curve, we ensure a comprehensive understanding of the model's performance and the associated trade-offs.
+Our evaluation approach goes beyond traditional metrics and focuses on metrics that align with the specific objectives of the business. By assessing recall and expected value as primary metrics, along with exploring other relevant metrics such as the F1 score and ROC curve, we ensure a comprehensive understanding of the model's performance and the associated trade-offs.
 
 ## Model Evaluation
-- In evaluating our models, we considered several metrics along with their 95% confidence intervals: AUC, F1 score, recall, and lifetime value. The results are shown below
+- In evaluating our models, we considered several metrics along with their 95% confidence intervals: AUC, F1 score, recall, and expected value. The results are compared below
 <img width="664" alt="compare_metrics" src="https://github.com/isabhinav/BankChurn/assets/130937665/ddd618de-c26e-4528-8f6e-7494c901b986">
 
 
 - Although there may be some overlap in the confidence intervals, the consistent trends observed across the evaluation metrics suggest that the XGBoost model generally outperforms the stepwise logistic and random forest models in terms of recall, F1 score, AUC, and profit per send.
 
 - While the confidence intervals provide a measure of uncertainty, the overall pattern of superior performance in the XGBoost model still indicates its strengths in churn classification.
+
+![roc_comparison](https://github.com/isabhinav/BankChurn/assets/130937665/f0b8d6ee-a171-469a-8f4c-062fe238e89e)
+
+- From the ROC curves, we see that the XGBoost model performs the best in terms of managing both specificity and sensitivity.
 
 ##### _Lifetime and Expected Value_
 
