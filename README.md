@@ -19,7 +19,7 @@ The selection of appropriate evaluation metrics hinges upon a comprehensive unde
 
 For example, If the manager emphasizes capturing as many potential churners as possible, the model should prioritize maximizing recall. This means the model aims to identify a high proportion of customers who are likely to churn, even if it results in some false positives. On the other hand, if the bank manager has limited resources and wants to focus on targeting only the most likely churners, the model should prioritize precision. This means the model aims to minimize false positives and identify the customers most likely to churn, even if the model may miss some potential churners. 
 
-Moreover, for churn problems, It is essential to consider the impact on lifetime value when assessing the effectiveness of the models. However, calculating lifetime value involves making numerous assumptions about the business such as the method of outreach (direct mail or email), cost of outreach, nature of incentive (offer or call to action), cost of the offer, open rate of direct mail or email, and response rate to these marketing interventions. Given the complexity of these assumptions, we need a less comprehensive metric, which still helps assess our models' financial impact.
+Moreover, for churn problems, It is essential to consider the impact on lifetime value when assessing the effectiveness of the models. However, calculating lifetime value involves making numerous assumptions about the business such as the method of outreach (direct mail or email), gross margin, cost of outreach, nature of incentive (offer or call to action), cost of the offer, open rate of direct mail or email, and response rate to these marketing interventions. Given the complexity of these assumptions, we need a less comprehensive metric, which still helps assess our models' financial impact.
 
 By carefully considering these elements, we can tailor our approach and metrics to effectively address the churn prediction problem and align with the specific needs and goals of the bank.
 
@@ -97,17 +97,17 @@ Our evaluation strategy focuses on metrics that directly quantify the consequenc
 ##### _Recall_
 Recall, also known as sensitivity or true positive rate, measures the ability of a model to correctly identify the positive class (churners) out of all the actual positive instances. In our context, recall is a crucial metric because we assume that the bank wants to capture as many potential churners as possible, even if it means intervening with some customers who may not churn. 
 
-##### _Profit per Send_
-Suppose we know the costs and benefits of each type of classification (true positives, true negatives, false positives, false negatives). Incorporating these costs into the evaluation of classification models makes it possible to estimate the profit generated per send by each model. Although profit per send is not as comprehensive as lifetime value, it still sheds light on the business impact of various models and the costs associated with misclassification. 
+##### _Lifetime Value_
+Suppose we know the costs and benefits of each type of classification (true positives, true negatives, false positives, false negatives). Incorporating these costs into the evaluation of classification models makes it possible to estimate the financial impact of each model. Although our lifetime value calculation is not comprehensive, it still sheds light on the business impact of various models and the costs associated with misclassification. 
 
 ##### _Additional Metrics_
 We also explore additional metrics to gain a comprehensive understanding of the trade-offs between different models. By considering these additional metrics, we can gain deeper insights into the performance of our models and make informed decisions about the optimal model selection based on the specific priorities and requirements of the business. For instance, we can examine the F1 score, which balances both precision and recall, providing insight into the overall effectiveness of the model in capturing churners while minimizing false positives. Additionally, we can plot the ROC curve to visualize the discrimination ability of our models and analyze the trade-off between the true positive rate and the false positive rate.
 
 ##### _Summary_
-Our evaluation approach goes beyond traditional metrics and focuses on metrics that align with the specific objectives of the business. By assessing recall and profit per send as primary metrics, along with exploring other relevant metrics such as the F1 score and ROC curve, we ensure a comprehensive understanding of the model's performance and the associated trade-offs.
+Our evaluation approach goes beyond traditional metrics and focuses on metrics that align with the specific objectives of the business. By assessing recall and lifetime value as primary metrics, along with exploring other relevant metrics such as the F1 score and ROC curve, we ensure a comprehensive understanding of the model's performance and the associated trade-offs.
 
 ## Model Evaluation
-- In evaluating our models, we considered several metrics along with their 95% confidence intervals: AUC, F1 score, recall, and profit per send.
+- In evaluating our models, we considered several metrics along with their 95% confidence intervals: AUC, F1 score, recall, and lifetime value.
 <img width="647" alt="compare_metrics" src="https://github.com/isabhinav/BankChurn/assets/130937665/18218015-2a4f-440e-bde3-cc171017a418">
 
 
