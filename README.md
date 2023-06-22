@@ -42,6 +42,7 @@ Focused on correlation plots, density plots, boxplots for numerical variables, a
  - These correlations suggest that the transaction behavior and their level of engagement with the bank are both factors that are important in predicting churn.
  - Among the most highly correlated variables with the response variable are 'Total_Trans_Ct',' Total_Ct_Chng_Q4_Q1', and 'Total_Revolving_Bal'.
  - Other highly correlated columns, such as 'Credit_Limit' and 'Avg_Open_To_Buy', must be evaluated and handled before data modeling.
+
  
 ![corrplot](https://github.com/isabhinav/BankChurn/assets/130937665/424bd0d4-c7b5-4f36-a424-6f9205d8a8fb)
 
@@ -50,6 +51,8 @@ Focused on correlation plots, density plots, boxplots for numerical variables, a
  - Density plots demonstrated differences in behavior between churned and existing customers, particularly in transaction variables such as 'Total_Trans_Ct', 'Total_Ct_Chng_Q4_Q1', 'Total_Revolving_Bal', and 'Avg_Utilization_Ratio'.
  - For example, we observe that the highest density of 'Total_Trans_Ct' for churned customers is around 80, while for existing customers, it is closer to 50.
  - Some differences were observed in customer relationship variables as well.
+
+
  ![eda_num1](https://github.com/isabhinav/BankChurn/assets/130937665/5ee97b4b-ca4e-48f6-8ed9-7657834e4161)
 
 ##### _Boxplots_
@@ -57,6 +60,8 @@ Focused on correlation plots, density plots, boxplots for numerical variables, a
  - Boxplots helped highlight distribution differences between churned and existing customers and potential outliers in the data.
  - Notably, transaction variables such as 'Total_Revolving_Bal' and 'Avg_Utilization_Ratio' had median values close to zero for churned customers.
 - The plots helped identify outliers; we must handle these data points appropriately to ensure model performance.
+
+
  ![eda_num2](https://github.com/isabhinav/BankChurn/assets/130937665/be5c5070-8468-4562-84f0-60b1bdcca2dc)
 
  ##### _Bar Charts_
@@ -64,6 +69,8 @@ Focused on correlation plots, density plots, boxplots for numerical variables, a
  - Examined categorical variables' distributions using bar charts.
  - Single customers appeared more likely to churn than married customers, and the income category seems to influence customer status.
 - We observe rows marked as 'Unknown' for 'Marital_Status','Education_Level', and 'Income_Category'.
+
+
 ![eda_cat1](https://github.com/isabhinav/BankChurn/assets/130937665/d9eb6374-b3cd-47d3-97cc-83fdf3afcffc)
 
 ## Data Preparation
